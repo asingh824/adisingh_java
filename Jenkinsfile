@@ -1,3 +1,4 @@
+@Library('my-shared-library-2') _
 pipeline{
     agent any
 
@@ -5,7 +6,10 @@ pipeline{
         stage('Git Checkout'){
             steps{
                 script{
-                    git branch: 'main', url: 'https://github.com/asingh824/adisingh_java.git'
+                    gitCheckout(
+                        git branch: 'main',
+                        url: "https://github.com/asingh824/adisingh_java.git"
+                    )
                 }
             }
         }
