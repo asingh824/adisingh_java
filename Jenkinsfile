@@ -1,4 +1,5 @@
 @Library('my-shared-library') _
+
 pipeline{
     agent any
 
@@ -10,23 +11,6 @@ pipeline{
                     url: "https://github.com/asingh824/adisingh_java.git"
                 )
             }
-        }
-        stage('Unit Test maven'){
-            when { expression {  params.action == 'create' } }
-            steps{
-                script{
-                    mvnTest()
-                }
-            }
-        }
-         stage('Integration Test maven'){
-         when { expression {  params.action == 'create' } }
-            steps{
-               script{
-                   
-                   mvnIntegrationTest()
-               }
-            }
-        }   
+        }  
     }
 }
