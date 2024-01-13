@@ -6,7 +6,12 @@ pipeline{
         stage('Git Checkout'){
             steps{
                 script{
-                    git branch: 'main', url: 'https://github.com/asingh824/adisingh_java.git'
+
+                    gitCheckout(
+                        git branch: "main"
+                        url: "https://github.com/asingh824/adisingh_java.git"
+                    )
+                    
                 }
             }
         }  
