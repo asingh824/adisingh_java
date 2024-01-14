@@ -1,16 +1,15 @@
 package com.minikube.sample;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class MinikubeSampleApplicationTests {
+@SpringBootApplication
+@EnableAutoConfiguration
+public class MinikubeSampleApplication {
 
-	@Test
-	public void contextLoads() {
-	}
+    public static void main(String[] args) {
 
+        SpringApplication.run(MinikubeSampleApplication.class, args);
+    }
 }
