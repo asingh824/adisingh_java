@@ -1,8 +1,9 @@
 @Library('my-shared-library') _
 pipeline{
     agent any
-    tools {
-        maven 'mvn'
+    parameters{
+
+        choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
     }
     stages{
         stage('Git Checkout'){
@@ -27,7 +28,7 @@ pipeline{
                 }
             }
         }
-        stage('Maven Int Test'){
+        stage('Int Test'){
             steps{
                 script{
 
