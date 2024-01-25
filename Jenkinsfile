@@ -11,7 +11,6 @@ pipeline{
     stages{
          
         stage('Git Checkout'){
-                if ( expression {  params.action == 'create' } )
             steps{
             gitCheckout(
                 branch: "main",
@@ -20,6 +19,7 @@ pipeline{
             }
         }
          stage('Unit Test maven'){
+            if ( expression {  params.action != 'create' } )
             steps{
                script{
                    mvnTest()
