@@ -27,7 +27,7 @@ pipeline{
                 }
             }
         }
-        stage('MVN test'){
+        stage('Maven Int Test'){
             steps{
                 script{
 
