@@ -19,7 +19,7 @@ pipeline{
             }
         }
          stage('Unit Test maven'){
-            if ( expression {  params.action != 'create' } )
+            when ( expression {  params.action == 'destroy' } )
             steps{
                script{
                    mvnTest()
